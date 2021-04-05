@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".splash.SplashActivity"
+        android:background="@color/purple_700">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_250dp"
+            android:layout_marginRight="@dimen/size_20dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/kc"
+          />
+
+
+    </RelativeLayout>
+</layout>

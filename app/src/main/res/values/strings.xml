@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">KCSuperMarket</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="start">Start</string>
+
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="slides_ended">All slides ended. Launch your activity here!</string>
+    <string name="change_orientation">Change Orientation</string>
+    <string name="rotate">Rotate</string>
+    <string name="title_fragment_slider">Fragment Slider</string>
+    <string name="anti_clock_spin">Anti Clock Spin</string>
+    <string name="clock_spin">Clock Spin</string>
+    <string name="cube_in_depth">Cube In Depth</string>
+    <string name="cube_in_rotate">Cube In Rotate</string>
+    <string name="cube_in_scaling">Cube In Scaling</string>
+    <string name="cube_out_depth">Cube Out Depth</string>
+    <string name="cube_out_rotate">Cube Out Rotate</string>
+    <string name="cube_out_scaling">Cube Out Scaling</string>
+    <string name="depth_page">Depth Page</string>
+    <string name="depth">Depth</string>
+    <string name="fade_out">Fade Out</string>
+    <string name="fan">Fan</string>
+    <string name="fidget_spin">"Fidget Spin "</string>
+    <string name="gate">"Gate "</string>
+    <string name="hinge">Hinge</string>
+    <string name="horizontal_flip">Horizontal Flip</string>
+    <string name="pop">Pop</string>
+    <string name="simple_transformation">Simple</string>
+    <string name="spinner_transformation">Spinner</string>
+    <string name="toss_transformation">Toss</string>
+    <string name="vertical_flip">Vertical Flip</string>
+    <string name="vertical_shut">Vertical Shut</string>
+    <string name="zoom_out">Zoom Out</string>
+
+    //navigation icons
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="mycourse">My Course</string>
+    <string name="myprofile">Profile</string>
+    <string name="slide_2_title">Find your special one</string>
+    <string name="slide_2_desc">We Provide Quality Items</string>
+    <string name="slide_1_title">Welcome To KC Suprermarket</string>
+    <string name="slide_1_desc">"Hello Welcome to Our Supermarket  We Provide Quality Products."</string>
+    <string name="slide_3_title">Fast Delivery</string>
+    <string name="slide_3_desc">Fast delivery to your home, office whereever you are</string>
+    <string name="mycart">Cart</string>
+    <string name="favorites">Favourites</string>
+    <string name="profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
