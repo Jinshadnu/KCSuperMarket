@@ -2,13 +2,21 @@ package com.example.kcsupermarket.fragments;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kcsupermarket.R;
+import com.example.kcsupermarket.adapter.CartAdapter;
+import com.example.kcsupermarket.databinding.FragmentCartBinding;
+import com.example.kcsupermarket.viewmodel.CartViewModel;
+import com.example.kcsupermarket.viewmodel.CategoryViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +24,9 @@ import com.example.kcsupermarket.R;
  * create an instance of this fragment.
  */
 public class CartFragment extends Fragment {
+    public CartViewModel cartViewModel;
+    public CartAdapter cartAdapter;
+    public FragmentCartBinding cartBinding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,12 +66,38 @@ public class CartFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        cartViewModel =
+                new ViewModelProvider(this).get(CartViewModel.class);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+        cartBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_cart,container,false);
+
+        cartBinding.recyclerCart.setLayoutManager(new LinearLayoutManager(getActivity()));
+        cartBinding.recyclerCart.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
+        cartBinding.recyclerCart.setHasFixedSize(true);
+
+        cartBinding.layoutBase.toolbar.setTitle("My Cart");
+
+
+        cartBinding.layoutBase.toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+        cartBinding.layoutBase.toolbar.setNavigationOnClickListener(v -> {
+            getActivity().onBackPressed();
+        });
+
+
+        getCartItems();
+
+
+        return cartBinding.getRoot();
+    }
+    public void getCartItems(){
+        cartViewModel.getCartItems().observe(getActivity(),carts -> {
+            cartAdapter=new CartAdapter(getActivity(),carts);
+            cartBinding.recyclerCart.setAdapter(cartAdapter);
+        });
     }
 }

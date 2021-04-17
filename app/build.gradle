@@ -99,6 +99,9 @@ dependencies {
 
     implementation 'com.android.support:support-v4:30.0.2'
 
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+
+
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     implementation 'com.android.support:multidex:1.0.3'

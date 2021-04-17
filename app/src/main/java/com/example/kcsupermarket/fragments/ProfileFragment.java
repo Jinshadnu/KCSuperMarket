@@ -2,6 +2,7 @@ package com.example.kcsupermarket.fragments;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kcsupermarket.R;
+import com.example.kcsupermarket.databinding.FragmentProfileBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +18,7 @@ import com.example.kcsupermarket.R;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
+ public FragmentProfileBinding profileBinding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +64,17 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        profileBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_profile,container,false);
+
+        profileBinding.layoutBase.toolbar.setTitle("My Profile");
+
+
+        profileBinding.layoutBase.toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+        profileBinding.layoutBase.toolbar.setNavigationOnClickListener(v -> {
+            getActivity().onBackPressed();
+        });
+
+
+        return profileBinding.getRoot();
     }
 }

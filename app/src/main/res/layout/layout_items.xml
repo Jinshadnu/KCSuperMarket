@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="items"
+            type="com.example.kcsupermarket.pojo.Items" />
+    </data>
+    <RelativeLayout
+        xmlns:bind="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_5dp"
+        android:layout_marginRight="@dimen/size_5dp"
+        android:layout_marginTop="@dimen/padd_10"
+        android:background="@drawable/relative_border">
+
+        <ImageView
+            android:id="@+id/imageView_item"
+            android:layout_width="@dimen/size_100dp"
+            android:layout_height="@dimen/size_90dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:src="@drawable/onion"
+            bind:items="@{items.item_image}"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/textView_itemname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView_item"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:layout_marginLeft="@dimen/padd_10"
+            android:text="@{items.item_name}"
+            android:textSize="@dimen/size_18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaranth"
+            />
+        <TextView
+            android:id="@+id/textView_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_itemname"
+            android:layout_marginTop="@dimen/size_5dp"
+            android:layout_marginLeft="@dimen/padd_10"
+            android:text="@{items.item_quntity}"
+            android:textSize="@dimen/size_16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaranth"
+            />
+        <TextView
+            android:id="@+id/textView_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView_quantity"
+            android:layout_marginTop="@dimen/size_5dp"
+            android:layout_marginLeft="@dimen/padd_10"
+            android:text="@{items.item_price}"
+            android:textSize="@dimen/size_18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/amaranth"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_addcart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:text="Add to cart"
+            android:layout_below="@id/textView_price"
+            android:layout_marginTop="@dimen/size_5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/amaranth"/>
+
+
+
+
+
+
+
+    </RelativeLayout>
+</layout>

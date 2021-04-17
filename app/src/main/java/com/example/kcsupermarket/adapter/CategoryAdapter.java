@@ -1,6 +1,7 @@
 package com.example.kcsupermarket.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kcsupermarket.R;
+import com.example.kcsupermarket.activities.SubCategoryActivity;
 import com.example.kcsupermarket.databinding.LayoutCategoriesBinding;
 import com.example.kcsupermarket.pojo.Categories;
 
@@ -38,6 +40,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
      Categories categories=categoriesList.get(position);
      holder.categoriesBinding.setCategories(categories);
+        holder.categoriesBinding.relativeCategories.setOnClickListener(v -> {
+            context.startActivity(new Intent(context.getApplicationContext(), SubCategoryActivity.class));
+        });
     }
 
     @Override

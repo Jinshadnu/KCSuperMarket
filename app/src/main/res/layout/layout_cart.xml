@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="cart"
+            type="com.example.kcsupermarket.pojo.Cart" />
+    </data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/relative_categories"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imageView_icon"
+            android:layout_width="@dimen/size_80dp"
+            android:layout_height="@dimen/size_80dp"
+            android:src="@drawable/chocolates"
+            app:cart="@{cart.item_image}"
+            android:layout_margin="@dimen/size_10dp"/>
+
+        <TextView
+            android:id="@+id/textView_itemname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/padd_10"
+            android:layout_toRightOf="@id/imageView_icon"
+            android:fontFamily="@font/sumana"
+            android:text="@{cart.item_name}"
+            android:textSize="@dimen/size_18dp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cart.quantity}"
+            android:textSize="@dimen/size_16dp"
+            android:textColor="@color/black"
+            android:layout_below="@id/textView_itemname"
+            android:layout_toRightOf="@id/imageView_icon"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/size_5dp"/>
+        <TextView
+            android:id="@+id/textView_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{cart.price}"
+            android:textSize="@dimen/size_16dp"
+            android:layout_below="@id/textView_quantity"
+            android:layout_toRightOf="@id/imageView_icon"
+            android:layout_marginLeft="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/size_5dp"/>
+
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/elegant_count"
+            android:layout_width="111dp"
+            android:layout_height="wrap_content"
+            app:initialNumber="1"
+            app:backGroundColor="@color/purple_200"
+            app:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/size_5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size_5dp"/>
+
+
+
+
+    </RelativeLayout>
+</layout>
