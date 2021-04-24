@@ -25,7 +25,7 @@
                 android:layout_width="@dimen/size_150dp"
                 android:layout_height="@dimen/size_100dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/kc"
+                android:src="@drawable/kc_logo"
                 android:layout_gravity="center_horizontal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

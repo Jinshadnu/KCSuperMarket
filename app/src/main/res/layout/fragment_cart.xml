@@ -4,6 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F4F5FA"
         tools:context=".fragments.CartFragment">
 
         <!-- TODO: Update blank fragment layout -->
@@ -18,7 +19,8 @@
             android:id="@+id/recycler_cart"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/layoutBase"/>
+            android:layout_below="@id/layoutBase"
+            android:layout_marginBottom="@dimen/size_80dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"

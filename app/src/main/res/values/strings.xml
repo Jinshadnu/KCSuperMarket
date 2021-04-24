@@ -46,7 +46,7 @@
     <string name="slide_1_desc">"Hello Welcome to Our Supermarket  We Provide Quality Products."</string>
     <string name="slide_3_title">Fast Delivery</string>
     <string name="slide_3_desc">Fast delivery to your home, office whereever you are</string>
-    <string name="mycart">Cart</string>
+    <string name="mycart">My Basket</string>
     <string name="favorites">Favourites</string>
     <string name="profile">Profile</string>
     <!-- TODO: Remove or change this placeholder text -->

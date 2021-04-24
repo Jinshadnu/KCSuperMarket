@@ -1,6 +1,7 @@
 package com.example.kcsupermarket.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -9,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kcsupermarket.R;
+import com.example.kcsupermarket.activities.ProductDetailsActivity;
 import com.example.kcsupermarket.databinding.LayoutItemsBinding;
 import com.example.kcsupermarket.pojo.Items;
 
@@ -36,6 +38,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
      Items items=itemsList.get(position);
      holder.itemsBinding.setItems(items);
+     holder.itemsBinding.cardItem.setOnClickListener(v -> {
+         context.startActivity(new Intent(context.getApplicationContext(), ProductDetailsActivity.class));
+     });
     }
 
     @Override

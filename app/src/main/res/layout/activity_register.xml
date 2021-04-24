@@ -36,7 +36,7 @@
             android:layout_width="@dimen/size_100dp"
             android:layout_height="@dimen/size_80dp"
             android:layout_marginTop="50dp"
-            android:src="@drawable/kc"
+            android:src="@drawable/kc_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

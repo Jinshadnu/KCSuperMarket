@@ -1,5 +1,6 @@
 package com.example.kcsupermarket.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.kcsupermarket.R;
+import com.example.kcsupermarket.activities.ShippingAddressActivity;
 import com.example.kcsupermarket.adapter.CartAdapter;
 import com.example.kcsupermarket.databinding.FragmentCartBinding;
 import com.example.kcsupermarket.viewmodel.CartViewModel;
@@ -77,7 +79,6 @@ public class CartFragment extends Fragment {
         cartBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_cart,container,false);
 
         cartBinding.recyclerCart.setLayoutManager(new LinearLayoutManager(getActivity()));
-        cartBinding.recyclerCart.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
         cartBinding.recyclerCart.setHasFixedSize(true);
 
         cartBinding.layoutBase.toolbar.setTitle("My Cart");
@@ -88,7 +89,9 @@ public class CartFragment extends Fragment {
             getActivity().onBackPressed();
         });
 
-
+        cartBinding.buttonOrder.setOnClickListener(v -> {
+         startActivity(new Intent(getActivity(), ShippingAddressActivity.class));
+        });
         getCartItems();
 
 

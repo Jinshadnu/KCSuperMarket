@@ -23,6 +23,67 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_marginTop="@dimen/padd_10"
+                app:layout_constraintTop_toBottomOf="@id/textView12"
+                android:background="@color/purple_700"/>
+
+            <RelativeLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                android:layout_marginTop="@dimen/padd_10"
+                >
+
+                <TextView
+                    android:id="@+id/textView_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9655547895"
+                    android:textColor="@color/black"
+                    android:drawableLeft="@drawable/ic_smartphone"
+                    android:drawablePadding="@dimen/size_6dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="@dimen/padd_10"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="@dimen/size_16sp"
+                    android:padding="@dimen/padd_10"/>
+
+                <TextView
+                    android:id="@+id/textView_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kreativeIthub@gmail.com"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/black"
+                    android:drawableLeft="@drawable/ic_gmail"
+                    android:layout_marginRight="@dimen/padd_10"
+                    android:drawablePadding="@dimen/size_5dp"
+                    android:fontFamily="@font/amaranth"
+                    android:textSize="@dimen/size_16sp"
+                    android:padding="@dimen/padd_10"/>
+
+
+
+
+
+            </RelativeLayout>
+
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_1dp"
+                android:layout_marginTop="@dimen/padd_10"
+                app:layout_constraintTop_toBottomOf="@id/linear"
+                android:background="@color/purple_700"/>
+
 
             <include
                 android:id="@+id/layoutBase"
@@ -34,9 +95,9 @@
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="@dimen/size_150dp"
-                android:layout_height="@dimen/size_150dp"
+                android:layout_height="@dimen/size_140dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/kc"
+                android:src="@drawable/kc_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
                 >
 
                 <LinearLayout
@@ -55,7 +116,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView_mycourse"
+                        android:id="@+id/textView_myorders"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/amaranth"
@@ -67,6 +128,7 @@
                         android:layout_marginLeft="@dimen/size_5dp"
                         android:drawablePadding="@dimen/size_8dp"
                         android:textSize="@dimen/size_16dp" />
+
 
                     <TextView
                         android:id="@+id/textView_address"
@@ -113,7 +175,7 @@
 
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/textViewchange"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/amaranth"

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.kcsupermarket.R;
@@ -44,6 +45,10 @@ public class SubCategoryActivity extends AppCompatActivity {
 
         subCategoryBinding.layoutBase.toolbar.setNavigationOnClickListener(v -> {
             this.onBackPressed();
+        });
+
+        subCategoryBinding.textViewViewbasket.setOnClickListener(v -> {
+         startActivity(new Intent(SubCategoryActivity.this,CartActivity.class));
         });
 
         getSubCategories();

@@ -12,6 +12,8 @@
         android:layout_marginTop="@dimen/padd_10"
         android:layout_marginLeft="@dimen/padd_10"
         android:layout_marginRight="@dimen/padd_10"
+        app:cardElevation="@dimen/size_5dp"
+        app:cardCornerRadius="@dimen/padd_10"
         android:layout_height="wrap_content">
 
         <RelativeLayout
