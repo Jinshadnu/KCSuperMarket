@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KCSuperMarket"
         tools:replace="android:theme">
-        <activity android:name=".activities.CartActivity"></activity>
+        <activity android:name=".utils.BaseActivity"></activity>
+        <activity android:name=".activities.CartActivity" />
         <activity android:name=".activities.AboutusActivity" />
         <activity android:name=".activities.PriceDetailsActivity" />
         <activity android:name=".activities.ShippingAddressActivity" />

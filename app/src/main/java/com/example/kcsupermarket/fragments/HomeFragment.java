@@ -5,8 +5,11 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
@@ -15,9 +18,12 @@ import android.view.ViewGroup;
 
 import com.example.kcsupermarket.R;
 import com.example.kcsupermarket.adapter.CategoryAdapter;
+import com.example.kcsupermarket.adapter.FeaturedProductAdapter;
 import com.example.kcsupermarket.adapter.ImageSliderAdapter;
 import com.example.kcsupermarket.databinding.FragmentHomeBinding;
+import com.example.kcsupermarket.pojo.FeaturedProducts;
 import com.example.kcsupermarket.viewmodel.CategoryViewModel;
+import com.example.kcsupermarket.viewmodel.FeaturedProductViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +41,8 @@ HomeFragment extends Fragment {
     public FragmentHomeBinding fragmentHomeBinding;
     public CategoryViewModel categoryViewModel;
     public CategoryAdapter categoryAdapter;
+    public FeaturedProductViewModel featuredProductViewModel;
+    public FeaturedProductAdapter featuredProductAdapter;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -78,6 +86,9 @@ HomeFragment extends Fragment {
         categoryViewModel =
                 new ViewModelProvider(this).get(CategoryViewModel.class);
 
+        featuredProductViewModel =
+                new ViewModelProvider(this).get(FeaturedProductViewModel.class);
+
     }
 
     @SuppressLint("ResourceAsColor")
@@ -96,7 +107,11 @@ HomeFragment extends Fragment {
         fragmentHomeBinding.recyclerCategories.setLayoutManager(new GridLayoutManager(getActivity(),3));
         fragmentHomeBinding.recyclerCategories.setHasFixedSize(true);
 
+        fragmentHomeBinding.recyclerSpecialoffers.setLayoutManager(new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false));
+        fragmentHomeBinding.recyclerSpecialoffers.setHasFixedSize(true);
+
         getCategories();
+        getfeaturedProduct();
 
 
         return fragmentHomeBinding.getRoot();
@@ -106,6 +121,16 @@ HomeFragment extends Fragment {
         categoryViewModel.getCategories().observe(getActivity(),categories -> {
             categoryAdapter=new CategoryAdapter(getActivity(),categories);
             fragmentHomeBinding.recyclerCategories.setAdapter(categoryAdapter);
+        });
+    }
+
+    public void getfeaturedProduct(){
+        featuredProductViewModel.getFeaturedProducts().observe((LifecycleOwner) this.getActivity(), new Observer<List<FeaturedProducts>>() {
+            @Override
+            public void onChanged(List<FeaturedProducts> featuredProducts) {
+                featuredProductAdapter=new FeaturedProductAdapter(getActivity(),featuredProducts);
+                fragmentHomeBinding.recyclerSpecialoffers.setAdapter(featuredProductAdapter);
+            }
         });
     }
 
